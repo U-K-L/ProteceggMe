@@ -7,4 +7,9 @@ class GameState extends FlxState
 	{
 		super.create();
 	}
+
+	override public function update(elapsed:Float)
+	{
+		super.update(elapsed);
+	}
 }

@@ -13,6 +13,7 @@ class PlayState extends FlxState
 	{
 		super.create();
 		playButton = new FlxButton(0, 0, "Play", clickPlay);
+		playButton.screenCenter();
 		add(playButton);
 	}
 
