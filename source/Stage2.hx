@@ -35,7 +35,7 @@ class Stage2 extends FlxState
 		super.update(elapsed);
 		if (FlxG.collide(pedestrian, car) || FlxG.collide(pedestrian, car2))
 		{
-			FlxG.switchState(new GameOver());
+			FlxG.switchState(new Stage2());
 		}
 		if (car.y < 0 - car.height)
 			car.y = 500;
