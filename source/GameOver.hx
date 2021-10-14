@@ -26,6 +26,6 @@ class GameOver extends FlxState
 
 	function clickPlay()
 	{
-		FlxG.switchState(new GameState());
+		FlxG.switchState(new Stage1());
 	}
 }
