@@ -1,7 +1,9 @@
 import flixel.FlxG;
+import flixel.FlxSprite;
 import flixel.FlxState;
 import flixel.text.FlxText;
 import flixel.ui.FlxBar;
+import openfl.display.BitmapData;
 
 class Stage1 extends GameState
 {
@@ -22,12 +24,14 @@ class Stage1 extends GameState
 
 		var car = new Car(350, 250, -300);
 		add(car);
-		var car2 = new Car(350, 50, 0);
-		add(car2);
-		var car3 = new Car(350, 350, 0);
-		add(car3);
+		/*
+			var car2 = new Car(350, 50, 0);
+			add(car2);
+			var car3 = new Car(350, 350, 0);
+			add(car3);
+		 */
 
-		cars = [car, car2, car3];
+		cars = [car];
 
 		safeCrossingCounter = new FlxText(550, 10, 0, "0/8", 32);
 		add(safeCrossingCounter);
@@ -37,6 +41,8 @@ class Stage1 extends GameState
 
 		stopSign = new StopSign(250, 250);
 		add(stopSign);
+		var bitMap = BitmapData.fromFile("assets/images/Map1.png");
+		createMap(bitMap);
 	}
 
 	override public function update(elapsed:Float)

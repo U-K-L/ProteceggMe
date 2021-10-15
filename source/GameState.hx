@@ -1,7 +1,9 @@
 import flixel.FlxG;
+import flixel.FlxSprite;
 import flixel.FlxState;
 import flixel.text.FlxText;
 import flixel.ui.FlxBar;
+import openfl.display.BitmapData;
 
 class GameState extends FlxState
 {
@@ -19,6 +21,25 @@ class GameState extends FlxState
 	override public function create()
 	{
 		super.create();
+	}
+
+	public function createMap(imageMap:BitmapData)
+	{
+		var width:Int = Std.int(imageMap.width);
+		var height:Int = Std.int(imageMap.height);
+		for (y in 0...height)
+		{
+			for (x in 0...width)
+			{
+				var pixel = imageMap.getPixel(x, y);
+				trace(pixel);
+				if (0xFF0000 == pixel)
+				{
+					var wall = new Wall(x * 32, y * 32);
+					add(wall);
+				}
+			}
+		}
 	}
 
 	override public function update(elapsed:Float)
